@@ -1,0 +1,12 @@
+  PERFORM OBTEM-UOR                                         
+  FOR #WX 1 TO 15                                           
+     FOR #WZ 1 TO #IND-2                                    
+        IF MCIS9033-COD-CRCT-S (#WZ) EQ MCIS9031-COD-S (#WX)
+          MOVE 0          TO MCIS9031-COD-S (#WX)           
+        END-IF                                              
+     END-FOR                                                
+     IF MCIS9031-COD-S (#WX) NE 0                           
+       #IND := #IND + 1                                     
+       #COD-RSTT (#IND) := MCIS9031-COD-S (#WX)             
+     END-IF                                                 
+  END-FOR                                                   
