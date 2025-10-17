@@ -10,3 +10,10 @@
        #COD-RSTT (#IND) := MCIS9031-COD-S (#WX)             
      END-IF                                                 
   END-FOR                                                   
+
+
+FOR #WZ 1 TO #IND             
+*  IF COD EQ #COD-RSTT (#WZ)  
+     RESET #VAR-CTRL(#IX-TAB) 
+   END-IF                     
+END-FOR                       
